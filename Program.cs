@@ -17,6 +17,7 @@ builder.Services.AddDbContext<EntityDbContext>(option =>
 // NTier Services Using Dependancy Injection
 builder.Services.AddScoped<ICategoryTblServices, CategoryTblServices>();
 builder.Services.AddScoped<ISubCategoryTblServices, SubCategoryTblServices>();
+builder.Services.AddScoped<IThirdCategoryTblServices, ThirdCategoryTblServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
