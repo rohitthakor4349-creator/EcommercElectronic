@@ -1,0 +1,48 @@
+﻿@page
+@model Ecommerce.Pages.Admin.StateFormModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+
+    <div class="container  mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>State Form</h4>
+                        <a asp-page="StateList" class="btn btn-primary">StateList</a>
+                    </div>
+                    <div class="card-body mb-3">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Country Name</label>
+                            <select class="form-select" asp-for="StateModel.CountryId">
+                            </select>
+                            <span class="text-danger" asp-validation-for="StateModel.CountryId"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Sub-Category</label>
+                            <input class="form-control" asp-for="StateModel.StateName">
+                            <span class="text-danger" asp-validation-for="StateModel.StateName"></span>
+                        </div>
+
+
+                    </div>
+                    <div class="card-footer d-flex justify-content-center mt-3">
+
+
+                        <input type="submit" class=" btn btn-primary">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section JavaScript
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

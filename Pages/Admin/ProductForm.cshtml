@@ -1,0 +1,90 @@
+﻿@page
+@model Ecommerce.Pages.Admin.ProductFormModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+
+    <div class="container  mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8`">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Sub-Cartegory Form</h4>
+                        <a asp-page="ProductForm"></a>
+                    </div>
+                    <div class="card-body mb-3">
+                    
+
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="exampleFormControlInput1"  class="form-label">Category</label>
+                                <select class="form-select" asp-for="Productmodel.CategoryId">
+                                </select>
+                                <span class="text-danger" asp-validation-for="Productmodel.CategoryId"></span>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="exampleFormControlInput1" class="form-label">Sub-Category</label>
+                                <select class="form-select" asp-for="Productmodel.SubCategoryId">
+                                </select>
+                                <span class="text-danger" asp-validation-for="Productmodel.SubCategoryId"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="exampleFormControlInput1" class="form-label">Third-Category</label>
+                                <select class="form-select" asp-for="Productmodel.ThirdCategoryId">
+                                </select>
+                                <span class="text-danger" asp-validation-for="Productmodel.ThirdCategoryId"></span>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="exampleFormControlInput1" class="form-label">Brand</label>
+                                <select class="form-select" asp-for="Productmodel.BrandId">
+                                </select>
+                                <span class="text-danger" asp-validation-for="Productmodel.BrandId"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="mb-3 col-6">
+                                <label for="exampleFormControlInput1" class="form-label">Product Name</label>
+                                <input type="text" class="form-control" id="txtProductName" asp-for="Productmodel.ProductName">
+                                <span class="text-danger" asp-validation-for="Productmodel.ProductName"></span>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="exampleFormControlInput1" class="form-label">Product Price</label>
+                                <input type="text" class="form-control" id="txtPrice" asp-for="Productmodel.Price">
+                                <span class="text-danger" asp-validation-for="Productmodel.Price"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="mb-3 col-6">
+                                <label for="exampleFormControlInput1" class="form-label">Photo Upload</label>
+                                <input type="file" class="form-control" id="FileUpload" asp-for="Productmodel.Photo">
+                                <span class="text-danger" asp-validation-for="Productmodel.Photo"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Description</span>
+                                <textarea class="form-control" aria-label="With textarea" asp-for="Productmodel.Description"></textarea>
+                                <span class="text-danger" asp-validation-for="Productmodel.Description"></span>
+                            </div>
+                        </div>
+                     
+                
+                    </div>
+                    <div class="card-footer d-flex justify-content-center mt-3">
+
+
+                        <input type="submit" class=" btn btn-primary">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

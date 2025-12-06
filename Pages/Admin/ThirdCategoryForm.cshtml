@@ -1,0 +1,54 @@
+﻿@page
+@model Ecommerce.Pages.Admin.ThirdCategoryFormModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+
+    <div class="container  mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Sub-Cartegory Form</h4>
+                        <a asp-page="Category"></a>
+                    </div>
+                    <div class="card-body mb-3">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Category</label>
+                            <select class="form-select" asp-for="ThirdCategorymodel.CategoryId">
+                            </select>
+                            <span class="text-danger" asp-validation-for="ThirdCategorymodel.CategoryId"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Sub-Category</label>
+                            <select class="form-select" asp-for="ThirdCategorymodel.SubCategoryId">
+                            </select>
+                            <span class="text-danger" asp-validation-for="ThirdCategorymodel.SubCategoryId"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Third-Category</label>
+                            <input class="form-control" asp-for="ThirdCategorymodel.ThirdCategory">
+                            <span class="text-danger" asp-validation-for="ThirdCategorymodel.ThirdCategory"></span>
+                        </div>
+
+
+                    </div>
+                    <div class="card-footer d-flex justify-content-center mt-3">
+
+
+                        <input type="submit" class=" btn btn-primary">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section JavaScript
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

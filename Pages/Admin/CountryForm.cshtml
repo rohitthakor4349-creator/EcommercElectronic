@@ -1,0 +1,35 @@
+﻿
+@page
+@model Ecommerce.Pages.Admin.CountryFormModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Cartegory Form</h4>
+                        <a asp-page="CountryList" class="btn btn-primary">CountryList</a>
+                    </div>
+                    <div class="card-body mb-3">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Country Name</label>
+                            <input class="form-control" asp-for="CountryModel.CountryName">
+                            <span class="text-danger" asp-validation-for="CountryModel.CountryName"></span>
+                        </div>
+
+                    </div>
+                    <div class="card-footer mb-3">
+                        <div class="mb-3">
+
+                            <input type="submit" class="form-control btn btn-primary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

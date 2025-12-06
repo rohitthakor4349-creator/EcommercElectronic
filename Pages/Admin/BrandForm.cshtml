@@ -1,0 +1,42 @@
+﻿@page
+@model Ecommerce.Pages.Admin.BrandFormModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Cartegory Form</h4>
+                        <a asp-page="Category"></a>
+                    </div>
+                    <div class="card-body mb-3">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Brand Name</label>
+                            <input class="form-control" asp-for="Brandmodel.BrandName">
+                            <span class="text-danger" asp-validation-for="Brandmodel.BrandName"></span>
+                        </div>
+
+                       
+                    </div>
+                    <div class="card-footer mb-3">
+                        <div class="mb-3">
+
+                            <input type="submit" class="form-control btn btn-primary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section JavaScript
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

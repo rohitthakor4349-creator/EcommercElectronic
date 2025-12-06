@@ -1,0 +1,71 @@
+﻿@page
+@model Ecommerce.Pages.Admin.SubCategoryModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+
+    <div class="container  mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Sub-Cartegory Form</h4>
+                        <a asp-page="SubCategoryList" class="btn btn-primary float-end">SubCategoryList</a>
+                    </div>
+                    <div class="card-body mb-3">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Category</label>
+
+                            <select class="form-select" asp-for="SubcategoryModel.CategoryId" asp-items="Model.CategoryList">
+                            </select>
+                            <span class="text-danger" asp-validation-for="SubcategoryModel.CategoryId"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Sub-Category</label>
+                            <input class="form-control" asp-for="SubcategoryModel.SubCategory">
+                            <span class="text-danger" asp-validation-for="SubcategoryModel.SubCategory"></span>
+                        </div>
+
+
+                    </div>
+                    <div class="card-footer d-flex justify-content-center mt-3">
+                        @if (string.IsNullOrEmpty(Request.Query["EditId"].ToString()))
+                        {
+                            <input type="submit" value="Save" asp-page-handler="Create" class=" btn btn-primary">
+
+                        }
+                        else
+                        {   
+                            <input type="hidden" asp-for="SubcategoryModel.SubCategoryId"  class=" btn btn-primary">
+                            <input type="submit" value="Update"  asp-page-handler="Update" class=" btn btn-primary">
+
+
+                        }
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section JavaScript
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <script>
+
+        var Qs = new URLSearchParams(window.location.search);
+
+        if(Qs.has("Message"))
+        {
+            alert(Qs.get("Message"))
+            window.location.href = "/Admin/SubCategoryForm";
+        }
+    </script>
+}
