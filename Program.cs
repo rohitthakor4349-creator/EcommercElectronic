@@ -20,6 +20,7 @@ builder.Services.AddDbContext<EntityDbContext>(option =>
 builder.Services.AddScoped<ICategoryTblServices, CategoryTblServices>();
 builder.Services.AddScoped<ISubCategoryTblServices, SubCategoryTblServices>();
 builder.Services.AddScoped<IThirdCategoryTblServices, ThirdCategoryTblServices>();
+builder.Services.AddScoped<IBrandTblServices, BrandTblServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

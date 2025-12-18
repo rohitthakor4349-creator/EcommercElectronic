@@ -6,26 +6,35 @@
 <form method="post" enctype="multipart/form-data">
 
     <div class="container mt-5">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Cartegory Form</h4>
-                        <a asp-page="Category"></a>
+                        <h4>Brand Form</h4>
+                        <a asp-page="BrandList" class="btn btn-primary float-end">BrandList</a>
                     </div>
                     <div class="card-body mb-3">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Brand Name</label>
-                            <input class="form-control" asp-for="Brandmodel.BrandName">
-                            <span class="text-danger" asp-validation-for="Brandmodel.BrandName"></span>
+                            <input class="form-control" asp-for="Brands.Brand">
+                            <span class="text-danger" asp-validation-for="Brands.Brand"></span>
                         </div>
 
-                       
+
                     </div>
                     <div class="card-footer mb-3">
                         <div class="mb-3">
+                            @if (string.IsNullOrEmpty(Request.Query["EditId"].ToString()))
+                            {
+                                <input type="submit" asp-page-handler="Create" value="Save" class="form-control btn btn-primary">
 
-                            <input type="submit" class="form-control btn btn-primary">
+                            }
+                            else
+                            {
+                                <input type="submit" asp-page-handler="Update" value="Update" class="form-control btn btn-primary">
+                                <input type="hidden" asp-for="Brands.BrandId"   class="form-control btn btn-primary">
+
+                            }
                         </div>
                     </div>
                 </div>
@@ -39,4 +48,15 @@
 {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+
+        var Qs = new URLSearchParams(window.location.search);
+
+        if(Qs.has("Message"))
+        {
+            alert(Qs.get("Message"));
+            window.location.href ="/Admin/BrandForm";
+        }
+    </script>
 }

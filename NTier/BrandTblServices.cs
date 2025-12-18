@@ -9,7 +9,7 @@ namespace Ecommerce.NTier
     public interface IBrandTblServices
     {
         Task<string> AddBrand(BrandTbl Model);
-        Task<string> UpdateBrand(BrandTbl Model,int BId);
+        Task<string> UpdateBrand(int BId, BrandTbl Model);
         Task<string> DeleteBrand(int BId);
         Task<BrandTbl> GetBrandId(int BId);
         Task<List<BrandTbl>> GetByBrandList();
@@ -32,7 +32,7 @@ namespace Ecommerce.NTier
                 }
 
                 var Data = await db.BrandTbls.Where(m => m.Brand == Model.Brand).FirstOrDefaultAsync();
-                if (Data == null)
+                if (Data != null)
                 {
                     return "Brand Name Is All Ready Exist";
                 }
@@ -114,7 +114,7 @@ namespace Ecommerce.NTier
             return Data;
         }
 
-        public async Task<string> UpdateBrand(BrandTbl Model, int BId)
+        public async Task<string> UpdateBrand(int BId, BrandTbl Model)
         {
             try
             {
@@ -154,7 +154,7 @@ namespace Ecommerce.NTier
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            db.Dispose();
         }
     }
 }

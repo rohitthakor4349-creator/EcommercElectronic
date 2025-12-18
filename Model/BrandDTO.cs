@@ -6,7 +6,7 @@ namespace Ecommerce.Model
     {
         public int BrandId { get; set; }
         [Required(ErrorMessage =("Please Enter BrandName"))]
-        public string? BrandName { get; set; }
+        public string? Brand { get; set; }
 
 
         [Required(ErrorMessage = ("Please Select Statsu"))]
