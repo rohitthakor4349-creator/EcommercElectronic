@@ -10,34 +10,47 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Sub-Cartegory Form</h4>
-                        <a asp-page="Category"></a>
+                        <h4>Third-Cartegory Form</h4>
+                        <a class="btn btn-primary float-end" asp-page="ThirdCategoryList">List</a>
                     </div>
                     <div class="card-body mb-3">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Category</label>
-                            <select class="form-select" asp-for="ThirdCategorymodel.CategoryId">
+                            <select id="CategoryId" asp-items="Model.CategoryList" class="form-select" asp-for="ThirdCategories.CategoryId">
+                                <option>--Select Category--</option>
                             </select>
-                            <span class="text-danger" asp-validation-for="ThirdCategorymodel.CategoryId"></span>
+                            <span class="text-danger" asp-validation-for="ThirdCategories.CategoryId"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Sub-Category</label>
-                            <select class="form-select" asp-for="ThirdCategorymodel.SubCategoryId">
+                            <select id="SubCategoryId" asp-items="Model.SubCategoryList" class="form-select" asp-for="ThirdCategories.SubCategoryId">
+                                <option>--Select SubCategory--</option>
                             </select>
-                            <span class="text-danger" asp-validation-for="ThirdCategorymodel.SubCategoryId"></span>
+                            <span class="text-danger" asp-validation-for="ThirdCategories.SubCategoryId"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Third-Category</label>
-                            <input class="form-control" asp-for="ThirdCategorymodel.ThirdCategory">
-                            <span class="text-danger" asp-validation-for="ThirdCategorymodel.ThirdCategory"></span>
+                            <input class="form-control" asp-for="ThirdCategories.ThirdCategory">
+                            <span class="text-danger" asp-validation-for="ThirdCategories.ThirdCategory"></span>
                         </div>
 
 
                     </div>
                     <div class="card-footer d-flex justify-content-center mt-3">
 
+                        @if (string.IsNullOrEmpty(Request.Query["EditId"].ToString()))
+                        {
+                            <input type="submit" asp-page-handler="Create" class=" btn btn-primary" value="Save">
 
-                        <input type="submit" class=" btn btn-primary">
+
+                        }
+                        else
+                        {
+                            <input type="submit" asp-page-handler="Update" class=" btn btn-primary" value="Update">
+
+                            <input type="hidden" asp-for="ThirdCategories.ThirdCategoryId" class=" btn btn-primary">
+
+                        }
 
 
                     </div>
@@ -51,4 +64,25 @@
 {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/ajaxcall/fillsubcategory.js"></script>
+    <script>
+
+        var Qs = new URLSearchParams(window.location.search);
+
+        if(Qs.has("Message"))
+        {
+            alert(Qs.get("Message"));
+
+            window.location.href = "/Admin/ThirdCategoryForm";
+        }
+    </script>
+    <script>
+        $("#CategoryId").change(()=>{
+
+            var CatId = $("#CategoryId").val();
+
+            FillSubCategorybyCatgory(CatId);
+            console.log(CatId);
+        });
+    </script>
 }

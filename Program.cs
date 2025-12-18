@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+//API Call
+builder.Services.AddControllers();
 // register Entity Framework
 
 builder.Services.AddDbContext<EntityDbContext>(option =>
@@ -17,6 +19,7 @@ builder.Services.AddDbContext<EntityDbContext>(option =>
 // NTier Services Using Dependancy Injection
 builder.Services.AddScoped<ICategoryTblServices, CategoryTblServices>();
 builder.Services.AddScoped<ISubCategoryTblServices, SubCategoryTblServices>();
+builder.Services.AddScoped<IThirdCategoryTblServices, ThirdCategoryTblServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,6 +36,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Mapimg Pipeline
+app.MapControllers();
 
 app.MapRazorPages();
 

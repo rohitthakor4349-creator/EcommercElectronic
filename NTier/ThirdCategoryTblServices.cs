@@ -8,7 +8,7 @@ namespace Ecommerce.NTier
     public interface IThirdCategoryTblServices
     {
         Task<string> AddThirdCategory(ThirdCategoryTbl Model);
-        Task<string> UpdateThirdCategory(ThirdCategoryTbl Model, int ThirdCatId);
+        Task<string> UpdateThirdCategory(int ThirdCatId, ThirdCategoryTbl Model);
         Task<string> DeleteThirdCategory(int ThirdCatId);
         Task<ThirdCategoryTbl> GetByThirdCategoryId(int ThirdCatId);
         Task<List<ThirdCategoryTbl>> GetByThirdCategoryList();
@@ -112,7 +112,7 @@ namespace Ecommerce.NTier
             return Data;
         }
 
-        public async Task<string> UpdateThirdCategory(ThirdCategoryTbl Model, int ThirdCatId)
+        public async Task<string> UpdateThirdCategory(int ThirdCatId,ThirdCategoryTbl Model)
         {
             try
             {
