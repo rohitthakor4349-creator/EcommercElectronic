@@ -8,7 +8,7 @@ namespace Ecommerce.NTier
     public interface ICountryTblSevices
     {
         Task<string> AddCountry(CountryTbl Model);
-        Task<string> UpdateCounty(CountryTbl Model, int CountryId);
+        Task<string> UpdateCounty(int CountryId, CountryTbl Model);
         Task<string> DeleteCounrty(int CountryId);
         Task<CountryTbl> GetByCountryId(int CountryId);
         Task<List<CountryTbl>> GetByCountryList();
@@ -110,7 +110,7 @@ namespace Ecommerce.NTier
             return Data;
         }
 
-        public async Task<string> UpdateCounty(CountryTbl Model, int CountryId)
+        public async Task<string> UpdateCounty(int CountryId, CountryTbl Model)
         {
             try
             {
@@ -149,7 +149,7 @@ namespace Ecommerce.NTier
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            db.Dispose();
         }
 
     }

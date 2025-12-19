@@ -23,6 +23,7 @@ builder.Services.AddScoped<IThirdCategoryTblServices, ThirdCategoryTblServices>(
 builder.Services.AddScoped<IBrandTblServices, BrandTblServices>();
 builder.Services.AddScoped<IProductTblServices, ProductTblServices>();
 builder.Services.AddScoped<IProductTblServices, ProductTblServices>();
+builder.Services.AddScoped<ICountryTblSevices, CountryTblSevices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
