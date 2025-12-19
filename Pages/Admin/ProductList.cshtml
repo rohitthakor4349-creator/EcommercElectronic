@@ -1,0 +1,114 @@
+﻿@page
+@model Ecommerce.Pages.Admin.ProductListModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">DataTables.Net</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Tables</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Datatables</a>
+
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"> ProductList </h4>
+                        <a class=" btn btn-primary float-end " asp-page="ProductForm">Add Product</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables"
+                                   class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ProductId</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>CategoryId</th>
+
+                                        <th>SubCategoryId</th>
+                                        <th>THirdCategoryId</th>
+                                        <th>BrandId</th>
+                                        <th>Photo</th>
+                                       
+
+                                        <th>Status</th>
+                                        <th>EntryDate</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (Model.ProductList != null)
+                                    {
+                                        foreach (var item in Model.ProductList)
+                                        {
+                                            <tr>
+                                                <td>@item.ProductId</td>
+                                                <td>@item.ProductName</td>
+                                                <td>@item.ProductPrice</td>
+
+                                                <td>@item.CategoryId</td>
+
+                                                <td>@item.SubCategoryId</td>
+                                                <td>@item.ThirdCategoryId</td>
+                                                <td>@item.BrandId</td>
+                                                 @if (item.Photo != null)
+                                                    {
+                                                    <td><img height="50" width="50" src="@Url.Content(item.Photo)" /></td>
+
+                                                    }
+                                                <td>@item.Status</td>
+                                                <td>@item.EntryDate</td>
+                                                <td><a asp-page="ProductForm" asp-route-EditId="@item.ProductId" class="btn btn-success">Edit</a></td>
+                                                <td><input type="submit" asp-route-DeleteId="@item.ProductId" asp-page-handler="Delete" name="btn" btn btn-danger value="Delete" /></td>
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section JavaScript
+{
+    <script>
+
+        var Qs = new URLSearchParams(window.location.search);
+
+        if(Qs.has("Message"))
+        {
+            alert(Qs.get("Message"))
+            window.location.href = "/Admin/ProductList";
+        }
+    </script>
+}

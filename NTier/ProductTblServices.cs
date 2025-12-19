@@ -8,13 +8,14 @@ namespace Ecommerce.NTier
     public interface IProductTblServices
     {
         Task<string> AddProduct(ProductTbl Model);
-        Task<string> UpdateProduct(ProductTbl Model,int PId);
+        Task<string> UpdateProduct(int PId, ProductTbl Model);
         Task<string> DeleteProduct(int PId);
         Task<ProductTbl> GetByProductId(int PId);
         Task<List<ProductTbl>> GetByProductList();
         Task<List<SelectListItem>> DropCategory();
         Task<List<SelectListItem>> DropSubCategory(int CategoryId);
         Task<List<SelectListItem>> DropThirdCategory(int SubCategoryId);
+        Task<List<SelectListItem>> DropBrand();
     }
     public class ProductTblServices : IProductTblServices,IDisposable
     {
@@ -114,7 +115,7 @@ namespace Ecommerce.NTier
             return Data;
         }
 
-        public async Task<string> UpdateProduct(ProductTbl Model, int PId)
+        public async Task<string> UpdateProduct(int PId, ProductTbl Model)
         {
             try
             {
@@ -198,11 +199,24 @@ namespace Ecommerce.NTier
 
             foreach (var item in Data)
             {
-                List.Add(new SelectListItem() { Value = item.ThirdCategory.ToString(), Text  = item.ThirdCategory });
+                List.Add(new SelectListItem() { Value = item.ThirdCategoryId.ToString(), Text  = item.ThirdCategory });
 
             }
             return List;    
             
+        }
+
+        public async Task<List<SelectListItem>> DropBrand()
+        {
+           var Data = await db.BrandTbls.ToListAsync();
+
+            List<SelectListItem> List = new List<SelectListItem>();
+
+            foreach (var item in Data)
+            {
+                List.Add(new SelectListItem() { Value = item.BrandId.ToString(), Text = item.Brand });
+            }
+            return List;
         }
     }
 }

@@ -23,17 +23,17 @@ namespace Ecommerce.Model
         public string? ProductName { get; set; }
 
         [Required(ErrorMessage = ("Please Enetr Price"))]
-        public int Price { get; set; }
+        public decimal ProductPrice { get; set; }
 
-        [Required(ErrorMessage =("Please Upload Photo"))]
+        [Required(ErrorMessage =("Plese Upload Image"))]
         public string? Photo { get; set; }
-        public IFormFile ImgUpload { get; set; }
+        public IFormFile? ImgUpload { get; set; }
 
         [Required(ErrorMessage =("Please Enter Description"))]
         public string? Description { get; set; }
 
         [Required(ErrorMessage = ("Please Select Statsu"))]
-        public bool IsActive { get; set; }
+        public bool Status { get; set; }
         public DateTime EntryDate { get; set; }
 
     }
