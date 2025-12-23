@@ -15,6 +15,6 @@ namespace Ecommerce.Entity.Model
        
         public string? StateName { get; set; }
 
-        public bool Statsu { get; set; }
+        public bool Status { get; set; }
     }
 }

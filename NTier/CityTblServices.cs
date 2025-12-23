@@ -7,11 +7,11 @@ namespace Ecommerce.NTier
 {
     public interface ICityTblServices
     {
-        Task<string> AddCountry(CityTbl Model);
-        Task<string> UpdateCounty(CityTbl Model, int CityId);
-        Task<string> DeleteCounrty(int CityId);
-        Task<CityTbl> GetByCountryId(int CityId);
-        Task<List<CityTbl>> GetByCountryList();
+        Task<string> AddCity(CityTbl Model);
+        Task<string> UpdateCity(int CityId, CityTbl Model);
+        Task<string> DeleteCity(int CityId);
+        Task<CityTbl> GetByCityId(int CityId);
+        Task<List<CityTbl>> GetByCityList();
         Task<List<SelectListItem>> DropCountry();
         Task<List<SelectListItem>> DropState(int CountryId);
     }
@@ -23,7 +23,7 @@ namespace Ecommerce.NTier
         {
             this.db = db;
         }
-        public async Task<string> AddCountry(CityTbl Model)
+        public async Task<string> AddCity(CityTbl Model)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace Ecommerce.NTier
             }
         }
 
-        public async Task<string> DeleteCounrty(int CityId)
+        public async Task<string> DeleteCity(int CityId)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace Ecommerce.NTier
 
        
 
-        public async Task<CityTbl> GetByCountryId(int CityId)
+        public async Task<CityTbl> GetByCityId(int CityId)
         {
             var Data = await db.CityTbls.FindAsync(CityId);
 
@@ -103,7 +103,7 @@ namespace Ecommerce.NTier
             return Data;
         }
 
-        public async Task<List<CityTbl>> GetByCountryList()
+        public async Task<List<CityTbl>> GetByCityList()
         {
             var Data = await db.CityTbls.ToListAsync();
 
@@ -114,7 +114,7 @@ namespace Ecommerce.NTier
             return Data;
         }
 
-        public async Task<string> UpdateCounty(CityTbl Model, int CityId)
+        public async Task<string> UpdateCity(int CityId, CityTbl Model)
         {
             try
             {
@@ -132,7 +132,7 @@ namespace Ecommerce.NTier
                     return "There Is No Data in Given Id";
                 }
                 
-                Data.CounrtyId = Model.CounrtyId;
+                Data.CountryId = Model.CountryId;
                 Data.StateId = Model.StateId;
                 Data.CityName = Model.CityName;
                 int row = await db.SaveChangesAsync();
@@ -160,7 +160,7 @@ namespace Ecommerce.NTier
             List<SelectListItem> List = new List<SelectListItem>();
             foreach (var item in Data)
             {
-                List.Add(new SelectListItem() { Value = item.CountryId.ToString(), Text = item.CountryName });
+                List.Add(new SelectListItem() { Value = item.CountryId.ToString(), Text = item.CountryName});
 
             }
             return List;

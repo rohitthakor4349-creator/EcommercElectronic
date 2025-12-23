@@ -1,0 +1,97 @@
+﻿@page
+@model Ecommerce.Pages.Admin.StateListModel
+@{
+    Layout = "_AdminSide";
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">DataTables.Net</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Tables</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Datatables</a>
+
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"> StateList </h4>
+                        <a class=" btn btn-primary float-end " asp-page="StateForm">Add StateForm</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables"
+                                   class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>StateId</th>
+                                        <th>CountryId</th>
+                                        <th>State</th>
+
+                                        <th>Status</th>
+                                     
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (Model.StateList != null)
+                                    {
+                                        foreach (var item in Model.StateList)
+                                        {
+                                            <tr>
+                                                <td>@item.StateId</td>
+                                                <td>@item.CountryId</td>
+                                                <td>@item.StateName</td>
+
+                                                <td>@item.Status</td>
+
+                                                <td><a asp-page="StateForm" asp-route-EditId="@item.StateId" class="btn btn-success">Edit</a></td>
+                                                <td><input type="submit" asp-route-DeleteId="@item.StateId" asp-page-handler="Delete" name="btn" btn btn-danger value="Delete" /></td>
+                                            </tr>
+                                        }
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section JavaScript
+{
+    <script>
+
+        var Qs = new URLSearchParams(window.location.search);
+
+        if(Qs.has("Message"))
+        {
+            alert(Qs.get("Message"))
+            window.location.href = "/Admin/StateList";
+        }
+    </script>
+}

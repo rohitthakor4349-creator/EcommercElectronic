@@ -9,7 +9,7 @@ namespace Ecommerce.NTier
     public interface IStateTblServices
     {
         Task<string> AddState(StateTbl Model);
-        Task<string> UpdateState(StateTbl Model, int StateId);
+        Task<string> UpdateState(int StateId, StateTbl Model);
         Task<string> DeleteState(int StateId);
         Task<StateTbl> GetByState(int StateId);
         Task<List<StateTbl>> GetByStateList();
@@ -112,7 +112,7 @@ namespace Ecommerce.NTier
             return Data;
         }
 
-        public async Task<string> UpdateState(StateTbl Model, int StateId)
+        public async Task<string> UpdateState(int StateId, StateTbl Model)
         {
 
             try

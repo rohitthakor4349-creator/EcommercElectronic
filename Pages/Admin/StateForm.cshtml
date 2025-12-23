@@ -11,27 +11,37 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>State Form</h4>
-                        <a asp-page="StateList" class="btn btn-primary">StateList</a>
+                        <a asp-page="StateList" class="btn btn-primary float-end">StateList</a>
                     </div>
                     <div class="card-body mb-3">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Country Name</label>
-                            <select class="form-select" asp-for="StateModel.CountryId">
+                            <select class="form-select" asp-items="Model.CountryList" asp-for="States.CountryId">
+                                <option value ="">--Select Country--</option>
                             </select>
-                            <span class="text-danger" asp-validation-for="StateModel.CountryId"></span>
+                            <span class="text-danger" asp-validation-for="States.CountryId"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Sub-Category</label>
-                            <input class="form-control" asp-for="StateModel.StateName">
-                            <span class="text-danger" asp-validation-for="StateModel.StateName"></span>
+                            <input class="form-control" asp-for="States.StateName">
+                            <span class="text-danger" asp-validation-for="States.StateName"></span>
                         </div>
 
 
                     </div>
                     <div class="card-footer d-flex justify-content-center mt-3">
 
+                        @if (string.IsNullOrEmpty(Request.Query["EditId"].ToString()))
+                        {
+                            <input type="submit" asp-page-handler="Create" value="Save" class=" btn btn-primary">
 
-                        <input type="submit" class=" btn btn-primary">
+                        }
+                        else
+                        {
+                            <input type="submit" asp-page-handler="Update" value="Update" class=" btn btn-primary">
+                            <input type="hidden" asp-for="States.StateId"  class=" btn btn-primary">
+
+                        }
 
 
                     </div>
@@ -45,4 +55,17 @@
 {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+
+        var Qs = new URLSearchParams(window.location.search);
+
+        if(Qs.has("Message"))
+        {
+
+            alert(Qs.get("Message"));
+
+            window.location.href = "/Admin/StateForm";
+        }
+    </script>
 }

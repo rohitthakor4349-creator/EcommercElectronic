@@ -12,33 +12,46 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>City Form</h4>
-                        <a asp-page="CityList" class="btn btn-primary">CityList</a>
+                        <a asp-page="CityList" class="btn btn-primary float-end">CityList</a>
                     </div>
                     <div class="card-body mb-3">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Country</label>
-                            <select class="form-select" asp-for="CityModel.CounrtyId">
+                            <select id="CountryId" class="form-select" asp-items="Model.CountryList" asp-for="Cities.CounrtyId">
+                           
+                                <option>--select Country--</option>
                             </select>
-                            <span class="text-danger" asp-validation-for="CityModel.CounrtyId"></span>
+                            <span class="text-danger" asp-validation-for="Cities.CounrtyId"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">State</label>
-                            <select class="form-select" asp-for="CityModel.StateId">
+                            <select id="StateId" class="form-select" asp-items="Model.StateList" asp-for="Cities.StateId">
+                                <option>--select State--</option>
+
                             </select>
-                            <span class="text-danger" asp-validation-for="CityModel.StateId"></span>
+                            <span class="text-danger" asp-validation-for="Cities.StateId"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">City Name</label>
-                            <input class="form-control" asp-for="CityModel.CityName">
-                            <span class="text-danger" asp-validation-for="CityModel.CityName"></span>
+                            <input class="form-control" asp-for="Cities.CityName">
+                            <span class="text-danger" asp-validation-for="Cities.CityName"></span>
                         </div>
 
 
                     </div>
                     <div class="card-footer d-flex justify-content-center mt-3">
 
+                        @if (string.IsNullOrEmpty(Request.Query["EditId"].ToString()))
+                        {
+                            <input type="submit" asp-page-handler="Create" value="Save" class=" btn btn-primary">
 
-                        <input type="submit" class=" btn btn-primary">
+                        }
+                        else
+                        {
+                            <input type="submit" asp-page-handler="Update" value="Update" class=" btn btn-primary">
+                            <input type="hidden"asp-for="Cities.CityId"  class=" btn btn-primary">
+
+                        }
 
 
                     </div>
@@ -52,4 +65,24 @@
 {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/ajaxcall/state.js"></script>
+    <script>
+
+        var Qs = new URLSearchParams(window.location.search);
+
+        if(Qs.has("Message"))
+        {
+            alert(Qs.get("Message"))
+            window.location.href = "/Admin/CityForm";
+        }
+    </script>
+    <script>
+
+        $("#CountryId").change(()=>{
+
+            var CouId = $("#CountryId").val();
+            console.log(CouId); 
+            FillStateByCountry(CouId);
+        });
+    </script>
 }
