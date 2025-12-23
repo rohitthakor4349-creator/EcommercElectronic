@@ -1,0 +1,1044 @@
+﻿@page
+@model Ecommerce.Pages.Client.ShopModel
+@{
+    Layout = "_ClientSide";
+}
+
+<!-- Shop Page Area Start -->
+<div class="shop-page-area section  pt-95 pt-lg-75 pt-md-65 pt-sm-55 pt-xs-40  pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+    <div class="container-fluid pl-80 pl-lg-15 pl-md-15 pl-sm-15 pl-xs-15  pr-80 pr-lg-15 pr-md-15 pr-sm-15 pr-xs-15">
+        <div class="row row-30">
+            <div class="col-lg-9 order-lg-2 order-1">
+                <div class="shop-top-bar shop-top-bar-flex mb-40 mb-xs-20">
+                    <div class="shop-topbar-left">
+                        <p>Showing 1–16 of 64 results</p>
+                        <div class="page-show">
+                            <span>Show</span>
+                            <ul>
+                                <li><a class="active" href="#">12</a></li>
+                                <li><a href="#">15</a></li>
+                                <li><a href="#">30</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="shop-topbar-right shop-tab-flex">
+                        <div class="short-by">
+                            <a href="#">Short By</a>
+                            <ul class="sort-by-dropdown">
+                                <li class="active"><a href="#">Default sorting</a></li>
+                                <li><a href="#">Sort by popularity</a></li>
+                                <li><a href="#">Sort by average rating</a></li>
+                                <li><a href="#">Sort by newness</a></li>
+                                <li><a href="#">Sort by price: low to high</a></li>
+                                <li><a href="#">Sort by price: high to low</a></li>
+                            </ul>
+                        </div>
+                        <div class="filter-active">
+                            <a href="#">filter</a>
+                        </div>
+                        <div class="shop-tab nav">
+                            <a class="active" href="#shop-1" data-bs-toggle="tab">
+                                <i class="fa fa-th"></i>
+                            </a>
+                            <a href="#shop-2" data-bs-toggle="tab">
+                                <i class="fa fa-list"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-filter-wrapper">
+                    <div class="row">
+                        <!-- Product Filter -->
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12 mb-30">
+                            <div class="product-price-filter">
+                                <div class="single-filter-title">
+                                    <h5>Price</h5>
+                                </div>
+                                <ul>
+                                    <li><a href="#">£0.00 - £50.00</a></li>
+                                    <li><a href="#">£50.00 - £100.00</a></li>
+                                    <li><a href="#">£100.00 - £150.00</a></li>
+                                    <li><a href="#">£150.00 - £200.00</a></li>
+                                    <li><a href="#">£200.00+</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Product Filter -->
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12 mb-30">
+                            <div class="product-size">
+                                <div class="single-filter-title">
+                                    <h5>Size</h5>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Full Size</a></li>
+                                    <li><a href="#">L</a></li>
+                                    <li><a href="#">M</a></li>
+                                    <li><a href="#">X</a></li>
+                                    <li><a href="#">XL</a></li>
+                                    <li><a href="#">XXL</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Product Filter -->
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12 mb-30">
+                            <div class="product-color">
+                                <div class="single-filter-title">
+                                    <h5>Color</h5>
+                                </div>
+                                <ul>
+                                    <li><a href="#"><span class="color-text">Blue</span></a></li>
+                                    <li><a href="#"><span class="color-text">Green</span></a></li>
+                                    <li><a href="#"><span class="color-text">Orange</span></a></li>
+                                    <li><a href="#"><span class="color-text">Pinkish</span></a></li>
+                                    <li><a href="#"><span class="color-text">Vista Blue</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12 mb-30">
+                            <div class="product-brand">
+                                <div class="single-filter-title">
+                                    <h5>Brands</h5>
+                                </div>
+                                <ul>
+                                    <li><a href="#">IKEA</a></li>
+                                    <li><a href="#">Mr Royal</a></li>
+                                    <li><a href="#">Mr.Poppin 1929</a></li>
+                                    <li><a href="#">North Oxford</a></li>
+                                    <li><a href="#">Sweet House</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-area-wrap">
+                    <div class="tab-content jump">
+                        <div id="shop-1" class="tab-pane active">
+                            <div class="row">
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                                <span class="sale">-20%</span>
+                                                <span class="new">New</span>
+                                                <span class="out-stock">Out of stock</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product01.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product02.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Coaster 526322-CO Loveseat</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£423.00</span> - <span class="discounted-price">£672.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                                <span class="sale">-20%</span>
+                                                <span class="new">New</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product03.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Bathroom Storage Floor Cabinet</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£584.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                                <span class="new">New</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product04.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product05.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Tiers Plant Rack Indoor Floor</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£316.00</span> - <span class="discounted-price">£672.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                                <span class="out-stock top-0">Out of stock</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product06.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product07.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Contemporary Bathroom Floor Storage</a></h3>
+                                            <p class="product-price">
+                                                <span class="main-price discounted">£423.00</span>
+                                                <div class="product-rating">
+                                                    <span class="rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                                <span class="out-stock top-0">Out of stock</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product08.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product09.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Casons Sofa Mocha</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£615.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                                <span class="new">New</span>
+                                                <span class="out-stock top-80">Out of stock</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product10.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product11.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Constance Slip Chair Covers</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£290.00</span> - <span class="discounted-price">£328.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product12.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product13.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Coaster 526322-CO Loveseat</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£423.00</span> - <span class="discounted-price">£672.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product14.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product15.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Coaster 526322-CO Loveseat</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£565.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <div class="product-label">
+                                                <span class="sale">-20%</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product16.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product17.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Knox Chaise Sofa Gray</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£589.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product18.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product19.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">The Parra Sofa Granite</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£328.00</span></p>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product20.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product21.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Office chair with armrests</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£102.00</span></p>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                                <div class=" coustom-col-4 col-xl-3 col-12">
+                                    <!--  Single Grid product Start -->
+                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                        <div class="product-image">
+                                            <a href="single-product.html">
+                                                <img src="~/assets/images/product/product22.jpg" class="img-fluid" alt="">
+                                                <img src="~/assets/images/product/product23.jpg" class="img-fluid" alt="">
+                                            </a>
+
+                                            <div class="product-action">
+                                                <ul>
+                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content text-left">
+                                            <h3 class="title"><a href="single-product.html">Plant in August Planter</a></h3>
+                                            <p class="product-price"><span class="main-price discounted">£25.00</span></p>
+                                            <div class="product-rating">
+                                                <span class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  Single Grid product End -->
+                                </div>
+                            </div>
+                        </div>
+                        <div id="shop-2" class="tab-pane">
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product01.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product02.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Coaster 526322-CO Loveseat</a></h3>
+                                                <p class="product-price product-list-price"><span class="main-price discounted">£423.00</span> - <span class="discounted-price">£672.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <div class="product-label">
+                                                <span class="sale">-20%</span>
+                                                <span class="new">New</span>
+                                            </div>
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product03.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product04.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Bathroom Storage Floor Cabinet</a></h3>
+                                                <p class="product-price product-list-price"><span class="discounted-price">£584.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product05.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product06.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Tiers Plant Rack Indoor Floor</a></h3>
+                                                <p class="product-price product-list-price"><span class="discounted-price">£316.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product07.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product08.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Contemporary Bathroom Floor Storage</a></h3>
+                                                <p class="product-price product-list-price"><span class="discounted-price">£423.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product09.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product10.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Casons Sofa Mocha</a></h3>
+                                                <p class="product-price product-list-price"><span class="discounted-price">£615.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product11.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product12.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Constance Slip Chair Covers</a></h3>
+                                                <p class="product-price product-list-price"><span class="main-price discounted">£423.00</span> - <span class="discounted-price">£672.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product13.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product14.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Coaster 506222-CO Loveseat</a></h3>
+                                                <p class="product-price product-list-price"><span class="main-price discounted">£423.00</span> - <span class="discounted-price">£572.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product15.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product16.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Coaster 526322-CO Loveseat</a></h3>
+                                                <p class="product-price product-list-price"><span class="discounted-price">£523.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product17.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product18.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Knox Chaise Sofa Gray</a></h3>
+                                                <p class="product-price product-list-price"><span class="main-price discounted"><del>£423.00</del></span> - <span class="discounted-price">£672.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product19.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product20.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">The Parra Sofa Granite</a></h3>
+                                                <p class="product-price product-list-price"><span class="discounted-price">£328.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                            <!-- Shop List Start -->
+                            <div class="shop-list-wrap mb-70 mb-70 mb-lg-30 mb-md-50 mb-sm-30 mb-xs-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="product-img-list">
+                                            <a href="single-product.html">
+                                                <img class="default-img" src="~/assets/images/product/product21.jpg" alt="">
+                                                <img class="hover-img" src="~/assets/images/product/product22.jpg" alt="">
+                                            </a>
+                                            <div class="product-quickview-list">
+                                                <a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Quick Shop</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="shop-list-content">
+                                            <div class="product-details-content quickview-content">
+                                                <h3><a href="single-product.html">Office chair with armrests</a></h3>
+                                                <p class="product-price product-list-price"><span class="main-price discounted">£423.00</span> - <span class="discounted-price">£672.00</span></p>
+                                                <p class="shop-list-des">Donec nunc nunc, gravida vitae diam vel, varius interdum erat. Quisque a nunc vel diam auctor commodo. Curabitur blandit ultrices exurabitur ut magna dignissim, dignissi, Nullam vitae venenatis elit. Proin dui lacus, viverra at imperdiet non, facilisis eget orci. Vivamus…</p>
+                                                <div class="pro-details-quality">
+                                                    <div class="pro-details-wishlist">
+                                                        <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                                    </div>
+                                                    <div class="pro-details-cart btn-hover">
+                                                        <a href="cart.html">Add To Cart</a>
+                                                    </div>
+                                                    <div class="pro-details-compare">
+                                                        <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shop List Start -->
+                        </div>
+                    </div>
+                    <div class="page-pagination-area">
+                        <ul class="page-pagination mt-0 mb-lg-0">
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#"><i class="dlicon arrows-1_tail-triangle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 order-lg-1 order-2">
+                <div class="shop-sidebar">
+                    <div class="sidebar-widget sidebar-border pb-45">
+                        <h4 class="pro-sidebar-title">Categories </h4>
+                        <div class="sidebar-widget-list mt-30">
+                            <ul>
+                                <li><a href="#">Accessories</a><span>(01)</span></li>
+                                <li><a href="#">Brands</a><span>(01)</span></li>
+                                <li><a href="#">Clothing</a><span>(01)</span></li>
+                                <li><a href="#">Fashion</a><span>(01)</span></li>
+                                <li><a href="#">Furniture</a><span>(01)</span></li>
+                                <li><a href="#">Men</a><span>(01)</span></li>
+                                <li><a href="#">Shoes</a><span>(01)</span></li>
+                                <li><a href="#">Uncategorized</a><span>(01)</span></li>
+                                <li><a href="#">Wallets</a><span>(01)</span></li>
+                                <li><a href="#">Woman</a><span>(01)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget mt-40 sidebar-border pb-45">
+                        <h4 class="pro-sidebar-title">Price </h4>
+                        <div class="price-filter mt-10">
+                            <div class="price-slider-amount">
+                                <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                            </div>
+                            <div id="slider-range"></div>
+                            <button>Filter</button>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget mt-40 sidebar-border pb-40">
+                        <h4 class="pro-sidebar-title">Brands </h4>
+                        <div class="sidebar-widget-brand mt-30">
+                            <ul>
+                                <li><a href="#"><span class="brand-box"></span> <span class="brand-name">IKEA</span></a> </li>
+                                <li><a href="#"><span class="brand-box"></span> <span class="brand-name">Mr Royal</span></a> </li>
+                                <li><a href="#"><span class="brand-box"></span> <span class="brand-name">Mr.Poppin 1929</span></a> </li>
+                                <li><a href="#"><span class="brand-box"></span> <span class="brand-name">North Oxford</span></a> </li>
+                                <li><a href="#"><span class="brand-box"></span> <span class="brand-name">Sweet House</span></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget mt-40 sidebar-border pb-40">
+                        <h4 class="pro-sidebar-title">Colors </h4>
+                        <div class="sidebar-widget-color mt-15">
+                            <ul>
+                                <li><a title="Black" class="swatch-anchor2 black" href="#">Black</a></li>
+                                <li><a title="Blue" class="swatch-anchor2 blue" href="#">Blue</a></li>
+                                <li><a title="Brown" class="swatch-anchor2 brown" href="#">Brown</a></li>
+                                <li><a title="Green" class="swatch-anchor2 green" href="#">Green</a></li>
+                                <li><a title="Purple" class="swatch-anchor2 purple" href="#">Purple </a></li>
+                                <li><a title="Yellow" class="swatch-anchor2 yellow" href="#">Yellow </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget mt-40 sidebar-border pb-40">
+                        <h4 class="pro-sidebar-title">Size </h4>
+                        <div class="sidebar-widget-size mt-30">
+                            <ul>
+                                <li><a href="#">Full Size</a></li>
+                                <li><a href="#">L</a></li>
+                                <li><a href="#">M</a></li>
+                                <li><a href="#">X</a></li>
+                                <li><a href="#">XL</a></li>
+                                <li><a href="#">XXL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget mt-40">
+                        <div class="sidebar-banner">
+                            <div class="sidebar-banner-image">
+                                <a href="#"><img src="~/assets/images/banner/banner-sidebar.jpg" alt=""></a>
+                            </div>
+                            <div class="sidebar-banner-content">
+                                <h5 class="title">Modern<br>Living Room<br>Collections</h5>
+                                <a class="banner-shop-btn" href="#">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Shop Page Area End -->

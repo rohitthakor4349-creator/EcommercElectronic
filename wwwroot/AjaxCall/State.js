@@ -7,13 +7,13 @@
         method: 'get',
         dataType: 'json',
         success: function (response) {
-
+            debugger;
             $("#StateId").empty();
             var option = `<option>--Select State--</option>`;
             $("#StateId").append(option);
-            for (item of response) {
+            for (var item of response) {
 
-                var option = `<option vlaue='${item.value}'>${item.text}<option>`;
+                var option = `<option value='${item.value}'>${item.text}</option>`;
                 $("#StateId").append(option);
             }
         },

@@ -34,7 +34,7 @@ namespace Ecommerce.Pages.Admin
                 var Data = await db.GetByCityId(EditId);
                 if (Data.CountryId != null)
                 {
-                    StateList = await db.DropState(Data.CountryId);
+                    StateList = await db.DropState(Data.CountryId.Value);
                 }
                 else
                 {
@@ -60,8 +60,9 @@ namespace Ecommerce.Pages.Admin
             {
                 var Msg = await db.AddCity(new CityTbl() {
 
-                    CountryId = Cities.CounrtyId,
                     StateId = Cities.StateId,
+
+                    CountryId = Cities.CounrtyId,
                     
                     CityName = Cities.CityName,
                     Status = true

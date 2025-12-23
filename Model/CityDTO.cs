@@ -7,10 +7,10 @@ namespace Ecommerce.Model
         public int CityId { get; set; }
 
         [Required(ErrorMessage = "Please Select Contry")]
-        public int CounrtyId { get; set; }
+        public int? CounrtyId { get; set; }
 
         [Required(ErrorMessage = "Please Select State")]
-        public int StateId { get; set; }
+        public int? StateId { get; set; }
 
         [Required(ErrorMessage = "Please Enter The CityName")]
         public string? CityName { get; set; }
