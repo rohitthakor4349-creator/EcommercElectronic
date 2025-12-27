@@ -1,0 +1,86 @@
+﻿@using Ecommerce.ViewModel.Menu;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model List<CategoryMenuVM>
+}
+<!--Header section start-->
+<header class="header ">
+    <div class="header-deafult menu-right height-150 d-flex align-items-center">
+        <div class="container-fluid pl-80 pr-80 pl-lg-15 pl-md-15 pl-sm-15 pl-xs-15 pr-lg-15 pr-md-15 pr-sm-15 pr-xs-15">
+            <div class="row align-items-center">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-4">
+                    <div class="logo">
+                        <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <!--Menu start-->
+                <div class="col-xl-6  d-none d-xl-block">
+                    <div class="menu-center d-flex justify-content-center">
+                        <nav class="main-menu ">
+                            <ul>
+                               @foreach (var Cat in Model)
+                                {
+                                    <li>
+                                        <a  asp-page="Shop"  asp-route-CatId="@Cat.CategoryId">@Cat.Category</a>
+                                        <ul class="sub-menu">
+
+                                            @foreach (var Sub in Cat.SubCategories)
+                                            {
+                                                <li class="has-dropdown">
+                                                    <a asp-page="Shop" asp-route-SubCatId="@Sub.SubCategoryId">@Sub.SubCategory</a>
+                                                    <ul class="sub-menu">
+                                                        @foreach (var Third in Sub.ThirdCategories)
+                                                        {
+                                                            <li>
+                                                                <a asp-page="Shop" asp-route-ThirdCatId="@Third.ThirdCategoryId">@Third.ThirdCategory</a>
+                                                            </li>
+                                                        }
+                                                      
+                                                    </ul>
+                                                </li>
+                                            }
+
+                                        </ul>
+                                    </li>
+                                }
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!--Menu end-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-8 d-flex justify-content-end">
+                    <div class="header-icon search ">
+                        <a class="search-trigger" href="#">
+                            <i class="dlicon ui-1_zoom"></i>
+                        </a>
+                    </div>
+                    <div class="header-icon cart ">
+                        <a href="wishlist.html">
+                            <span class="cart-count">3</span>
+                            <i class="dlicon ui-3_heart"></i>
+                        </a>
+                    </div>
+                    <div class="header-icon cart ">
+                        <a class="cart-trigger" href="#">
+                            <span class="cart-count">3</span>
+                            <i class="dlicon shopping_cart-modern"></i>
+                        </a>
+                    </div>
+                    <div class="header-icon hamburger-menu ">
+                        <a class="hamburger-trigger d-none d-xl-block" href="#">
+                            <i class="dlicon ui-3_menu"></i>
+                        </a>
+
+                        <a class="hamburger-trigger d-block d-xl-none" href="#">
+                            <i class="dlicon ui-3_menu"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--Header section end-->
