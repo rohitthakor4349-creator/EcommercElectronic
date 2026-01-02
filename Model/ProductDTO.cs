@@ -36,5 +36,11 @@ namespace Ecommerce.Model
         public bool Status { get; set; }
         public DateTime EntryDate { get; set; }
 
+        public string? CategoryName { get; set; }
+        public string? SubCategoryName { get; set; }
+        public string? ThirdCategoryName { get; set; }
+        public string? BrandName { get; set; }
+
+
     }
 }

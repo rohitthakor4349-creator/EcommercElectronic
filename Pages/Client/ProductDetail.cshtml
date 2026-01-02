@@ -1,0 +1,149 @@
+﻿@page
+
+@model Ecommerce.Pages.Client.ProductDetailModel
+@{
+    Layout = "_ClientSide";
+}
+<div class="product-details-area section border-top pt-80 pt-lg-60 pt-md-50 pt-sm-45 pt-xs-25  pb-55 pb-lg-15 pb-md-5 pb-sm-0 pb-xs-0">
+    <div class="container-fluid pl-80 pl-lg-15 pl-md-15 pl-sm-15 pl-xs-15  pr-80 pr-lg-15 pr-md-15 pr-sm-15 pr-xs-15">
+        <div class="row pb-25 align-items-center">
+            <div class="col-md-6 col-sm-6">
+                <div class="breadcrumb-area">
+                    <ul class="page-breadcrumb-three">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop-left-sidebar.html">Shop</a></li>
+                        <li>Single Product</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="product-nav">
+                    <ul class="d-flex justify-content-end">
+                        <li><a href="#"><i class="dlicon arrows-1_tail-left"></i></a></li>
+                        <li><a href="#"><i class="dlicon arrows-1_tail-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row row-30">
+            @if (Model.Product != null)
+            {
+                var item = Model.Product;
+               
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="product-details-tab">
+                            <div class="product-tabs pro-dec-big-img-slider slick-initialized slick-slider">
+                                <div class="slick-list">
+                                    <div class="slick-track" style="opacity: 1; width: 7062px; transform: translate3d(-642px, 0px, 0px);">
+                                        <div class="easyzoom-style slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 642px;">
+                                            <div class="easyzoom easyzoom--overlay">
+                                                <a href="~/~/assets/images/product/product-big/product05.jpg" tabindex="-1">
+                                                    <img src="@item.Photo" alt="">
+                                                </a>
+                                            </div>
+                                            <a class="easyzoom-pop-up img-popup" href="~/~/assets/images/product/product-big/product05.jpg" tabindex="-1"><i class="dlicon ui-1_zoom-in"></i></a>
+                                        </div><div class="easyzoom-style slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 642px;">
+                                            <div class="easyzoom easyzoom--overlay">
+                                                <div class="product-label">
+                                                    <span class="sale">-20%</span>
+                                                    <span class="new">New</span>
+                                                </div>
+                                                <a href="~/~/assets/images/product/product-big/product01.jpg" tabindex="0">
+                                                    <img src="@Url.Content(item.Photo)" alt="">
+                                                </a>
+                                            </div>
+                                            <a class="easyzoom-pop-up img-popup" href="~/assets/images/product/product-big/product01.jpg" tabindex="0"><i class="dlicon ui-1_zoom-in"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="product-details-content quickview-content">
+                            <h2>@item.ProductName</h2>
+                            <div class="product-rating-stock">
+                                <div class="product-dec-rating-reviews">
+                                    <div class="product-dec-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <div class="product-dec-reviews">
+                                        <a> (3 customer reviews)</a>
+                                    </div>
+                                </div>
+                                <div class="pro-stock">
+                                    <span><i class="dlicon ui-1_check-circle-08"></i>in stock</span>
+                                </div>
+                            </div>
+                            <p class="product-price product-details-price"><span class="main-price discounted"><del>£723.00</del></span> <span class="discounted-price">@item.ProductPrice</span></p>
+                            <p class="fz-16">@item.Description</p>
+                            <div class="pro-details-quality">
+                                <div class="quantity quantity--2">
+                                    <input type="text" class="quantity-input" name="qty" id="qty-1" value="1">
+                                    <div class="dec qtybutton">-</div>
+                                    <div class="inc qtybutton">+</div>
+                                    <div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>
+                                </div>
+                                <div class="pro-details-cart btn-hover">
+                                    <a href="cart.html">Add To Cart</a>
+                                </div>
+                                <div class="pro-details-wishlist">
+                                    <a href="wishlist.html"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                                <div class="pro-details-compare">
+                                    <a href="compare.html"><i class="fa fa-files-o"></i></a>
+                                </div>
+                            </div>
+                            <div class="pro-details-sku">
+                                <span>SKU: D-12525</span>
+                            </div>
+                            <div class="pro-details-meta">
+                                <span>Categories : </span>
+                                <ul>
+                                    <li><a href="#">@item.CategoryName,</a></li>
+                                    <li><a href="#">@item.SubCategoryName,</a></li>
+                                    <li><a href="#">@item.ThirdCategoryName,</a></li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="pro-details-meta">
+                                <span>Tag : </span>
+                                <ul>
+                                    <li><a href="#">Furniture,</a></li>
+                                    <li><a href="#">@item.BrandName</a></li>
+                                </ul>
+                            </div>
+                            <div class="product-html-custom">
+                                <a href="#"><i class="dlicon shopping_delivery-fast"></i>Store availability</a>
+                                <a href="#"><i class="dlicon location_pin"></i>Delivery and return</a>
+                                <a href="#"><i class="dlicon design_measure-17"></i>Size Guide</a>
+                            </div>
+                            <div class="pro-details-social">
+                                <ul>
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                //}
+            }
+
+
+        </div>
+    </div>

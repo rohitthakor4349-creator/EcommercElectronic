@@ -3,9 +3,25 @@
 @{
     Layout = "_ClientSide";
 }
+<div class="breadcrumb-section section bg-image" data-bg="./assets/images/bg/bg-title-shop.jpg" style="background-image: url(&quot;./assets/images/bg/bg-title-shop.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            <div class="col">
 
+                <div class="breadcrumb-title text-center">
+                    <h1>Shop  Sidebar</h1>
+                    <ul class="page-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Shop Left Sidebar</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Shop Page Area Start -->
-<div class="shop-page-area section  pt-95 pt-lg-75 pt-md-65 pt-sm-55 pt-xs-40  pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+<div class="shop-page-area section  pt-lg-75 pt-md-65 pt-sm-55 pt-xs-40  pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
     <div class="container-fluid pl-80 pl-lg-15 pl-md-15 pl-sm-15 pl-xs-15  pr-80 pr-lg-15 pr-md-15 pr-sm-15 pr-xs-15">
         <div class="row row-30">
             <div class="col-lg-9 order-lg-2 order-1">
@@ -114,45 +130,53 @@
                     <div class="tab-content jump">
                         <div id="shop-1" class="tab-pane active">
                             <div class="row">
-                                <div class=" coustom-col-4 col-xl-3 col-12">
-                                    <!--  Single Grid product Start -->
-                                    <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
-                                        <div class="product-image">
-                                            <div class="product-label">
-                                                <span class="sale">-20%</span>
-                                                <span class="new">New</span>
-                                                <span class="out-stock">Out of stock</span>
-                                            </div>
-                                            <a href="single-product.html">
-                                                <img src="~/assets/images/product/product01.jpg" class="img-fluid" alt="">
-                                                <img src="~/assets/images/product/product02.jpg" class="img-fluid" alt="">
-                                            </a>
+                                @if (Model.ProductList != null)
+                                {
+                                    foreach (var item in Model.ProductList)
+                                    {
+                                        <div class=" coustom-col-4 col-xl-3 col-12">
+                                            <!--  Single Grid product Start -->
+                                            <div class="single-grid-product mb-70 mb-lg-50 mb-md-50 mb-sm-30 mb-xs-30">
+                                                <div class="product-image">
+                                                    <div class="product-label">
+                                                        <span class="sale">-20%</span>
+                                                        <span class="new">New</span>
+                                                        <span class="out-stock">Out of stock</span>
+                                                    </div>
+                                                    <a href="single-product.html">
+                                                       
+                                                        <img src="@Url.Content(item.Photo)" class="img-fluid" alt="">
+                                                    </a>
 
-                                            <div class="product-action">
-                                                <ul>
-                                                    <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
-                                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
-                                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
+                                                    <div class="product-action">
+                                                        <ul>
+                                                            <li><a title="Quick Shop" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-search-plus"></i></a></li>
+                                                            <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                            <li><a href="compare.html"><i class="fa fa-bar-chart"></i></a></li>
+                                                            <li><a asp-page="ProductDetail" asp-route-ProductId="@item.ProductId"><i class="fa fa-shopping-cart"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-content text-left">
+                                                    <h3 class="title"><a href="single-product.html">@item.ProductName</a></h3>
+                                                    <p class="product-price"><span class="main-price discounted">@item.ProductPrice</span> </p>
+                                                    <div class="product-rating">
+                                                        <span class="rating">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <!--  Single Grid product End -->
                                         </div>
-                                        <div class="product-content text-left">
-                                            <h3 class="title"><a href="single-product.html">Coaster 526322-CO Loveseat</a></h3>
-                                            <p class="product-price"><span class="main-price discounted">£423.00</span> - <span class="discounted-price">£672.00</span></p>
-                                            <div class="product-rating">
-                                                <span class="rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--  Single Grid product End -->
-                                </div>
+                                    }
+                                }
+                             
+                            
                         
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Entity;
 using Ecommerce.Entity.Model;
+using Ecommerce.Model;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,8 +17,13 @@ namespace Ecommerce.NTier
         Task<List<SelectListItem>> DropSubCategory(int CategoryId);
         Task<List<SelectListItem>> DropThirdCategory(int SubCategoryId);
         Task<List<SelectListItem>> DropBrand();
+        Task<List<ProductTbl>> MenuCatgory(int CatId);
+        Task<List<ProductTbl>> MenuSubCatgory(int SubCatId);
+        Task<List<ProductTbl>> MenuThirdCatgory(int ThirdCatId);
+        Task<ProductDTO> ProductDetaile(int PId);
+
     }
-    public class ProductTblServices : IProductTblServices,IDisposable
+    public class ProductTblServices : IProductTblServices, IDisposable
     {
         private readonly EntityDbContext db;
 
@@ -33,8 +39,8 @@ namespace Ecommerce.NTier
                 {
                     return "Model Id Null";
                 }
-                 
-                 var data = await db.ProductTbls.Where(m => m.ProductName == Model.ProductName).FirstOrDefaultAsync();
+
+                var data = await db.ProductTbls.Where(m => m.ProductName == Model.ProductName).FirstOrDefaultAsync();
                 if (data != null)
                 {
                     return "ProductName Is All Ready Exist";
@@ -91,7 +97,7 @@ namespace Ecommerce.NTier
             }
         }
 
-      
+
 
         public async Task<ProductTbl> GetByProductId(int PId)
         {
@@ -135,7 +141,7 @@ namespace Ecommerce.NTier
                 }
 
                 Data.CategoryId = Model.CategoryId;
-                Data.SubCategoryId = Model.SubCategoryId; 
+                Data.SubCategoryId = Model.SubCategoryId;
                 Data.ThirdCategoryId = Model.ThirdCategoryId;
                 Data.BrandId = Model.BrandId;
                 Data.ProductName = Model.ProductName;
@@ -199,16 +205,16 @@ namespace Ecommerce.NTier
 
             foreach (var item in Data)
             {
-                List.Add(new SelectListItem() { Value = item.ThirdCategoryId.ToString(), Text  = item.ThirdCategory });
+                List.Add(new SelectListItem() { Value = item.ThirdCategoryId.ToString(), Text = item.ThirdCategory });
 
             }
-            return List;    
-            
+            return List;
+
         }
 
         public async Task<List<SelectListItem>> DropBrand()
         {
-           var Data = await db.BrandTbls.ToListAsync();
+            var Data = await db.BrandTbls.ToListAsync();
 
             List<SelectListItem> List = new List<SelectListItem>();
 
@@ -217,6 +223,74 @@ namespace Ecommerce.NTier
                 List.Add(new SelectListItem() { Value = item.BrandId.ToString(), Text = item.Brand });
             }
             return List;
+        }
+
+        public async Task<List<ProductTbl>> MenuCatgory(int CatId)
+        {
+
+            var Data = await db.ProductTbls.Where(m => m.CategoryId == CatId).ToListAsync();
+            if (Data == null)
+            {
+                Data = new List<ProductTbl>();
+            }
+
+            return Data;
+
+
+        }
+
+        public async Task<List<ProductTbl>> MenuSubCatgory(int SubCatId)
+        {
+            var Data = await db.ProductTbls.Where(m => m.SubCategoryId == SubCatId).ToListAsync();
+
+            if (Data == null)
+            {
+                Data = new List<ProductTbl>();
+            }
+            return Data;
+        }
+
+        public async Task<List<ProductTbl>> MenuThirdCatgory(int ThirdCatId)
+        {
+            var Data = await db.ProductTbls.Where(m => m.ThirdCategoryId == ThirdCatId).ToListAsync();
+
+            if (Data == null)
+            {
+                Data = new List<ProductTbl>();
+            }
+
+            return Data;
+        }
+
+        public async Task<ProductDTO> ProductDetaile(int PId)
+        {
+            var Data = await (from p in db.ProductTbls
+
+                              join cat in db.categoryTbls
+                              on p.CategoryId equals cat.CategoryId
+                              join SubC in db.SubCategoryTbls
+                              on p.SubCategoryId equals SubC.SubCategoryId
+                              join ThirdC in db.ThirdCategoryTbls
+                              on p.ThirdCategoryId equals ThirdC.ThirdCategoryId
+                              join b in db.BrandTbls
+                              on p.BrandId equals b.BrandId
+                              where p.ProductId == PId
+                              select new ProductDTO()
+                              {
+                                  ProductName = p.ProductName,
+                                  ProductId = p.ProductId,
+                                  ProductPrice = p.ProductPrice,
+                                  CategoryName = p.CategoryId.ToString(),
+                                  SubCategoryName = p.SubCategoryId.ToString(),
+                                  ThirdCategoryName = p.ThirdCategoryId.ToString(),
+                                  BrandName = p.BrandId.ToString(),
+                                  Photo = p.Photo,
+                                  Description = p.Description,
+                              }).FirstOrDefaultAsync();
+
+           
+            return Data;
+           
         }
     }
 }
